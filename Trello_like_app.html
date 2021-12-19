@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello App</title>
+</head>
+<!-- Important Scripts for Jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Jquery UI -->
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<!--  -->
+
+
+<!-- fonts -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+<!--  -->
+
+<body>
+    <h1 id="head"> To-do List</h1>
+<div class="container">
+
+    <div class="pending">
+        <h1>Tasks</h1>
+
+        <ul id="list_1" class="linked">
+            <li >
+                Do Homework
+            </li>
+
+            <li>
+                Eat Breakfast
+            </li>
+
+            <li>
+                Drink Water
+            </li>
+
+            <li>
+                Delete System32
+            </li>
+
+            <li>
+                Sleep
+            </li>
+        </ul>
+
+    </div>
+
+
+
+    <div class="done">
+        <h1>Completed</h1>
+
+        <ul id="list_2" class="linked">
+
+        </ul>
+
+    </div>
+
+
+
+
+</div>
+
+    
+</body>
+
+
+<style>
+    li{
+        z-index: 20;
+        list-style: none;
+        line-height: 40px;
+        margin-top: 20px;
+        text-align: center;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        backdrop-filter: blur(20px);
+        /* background: rgb(255,255,255);
+        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(231,1,1,1) 0%, rgba(255,255,255,1) 0%, rgba(233,0,0,1) 0%, rgba(245,0,0,1) 30%, rgba(252,0,228,1) 73%, rgba(9,0,255,1) 100%); */
+        background-color: rgba(24, 0, 0, 0.651);
+        height: 40px;
+        font-family: 'Montserrat', sans-serif;
+        color: white;
+    }
+    #head{
+        background-color: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(20px);
+        color: black;
+    }
+    #list_1{
+      
+        
+        min-height: 40px;
+
+
+
+    }
+    #list_2{
+       
+        min-height: 40px;
+    }
+    h1{
+        backdrop-filter: blur(20px);
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        border-bottom: 5px solid crimson;
+        background-color: rgba(1,1,1,0.2);
+        color: deepskyblue;
+        
+        
+    }
+    *{
+        
+        margin: 0px;
+        padding: 0px;
+    }
+    .container{
+        z-index: -1;
+        object-fit: contain;
+        /* background-image:url("https://webneel.com/wallpaper/sites/default/files/images/08-2018/2-nature-wallpaper-grass.1440.jpg"); */
+        background-color: rgb(52, 52, 52);
+       
+        /* background-color: crimson; */
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .pending{
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        border-radius: 20px;
+        padding: 20px;
+        /* background-color:crimson; */
+        background-color: rgba(1,1,1,0.5);
+
+        backdrop-filter: blur(20px);
+        margin-top: 50px;
+        height:500px;
+        width: 45%;
+        /* border: 1px solid black; */
+    }
+    .done{
+        z-index: 2;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        border-radius: 20px;
+        padding: 20px;
+
+        background-color: rgba(1,1,1,0.5);
+        backdrop-filter: blur(20px);
+        margin-top: 50px;
+        height:500px;
+        width: 45%;
+        margin-left: 10px;
+        /* border: 1px solid red; */
+    }
+
+</style>
+
+
+<script>
+    $(function(){
+        $("#list_1").sortable({
+            placeholder: "ui-state-error"
+        });
+        $("#list_2").sortable({
+            placeholder: "ui-state-error"
+        });
+        $("#list_1,#list_2").sortable({
+            connectWith:".linked", animate:true
+            
+        });
+
+
+
+
+    })
+</script>
+
+</html>
